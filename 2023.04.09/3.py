@@ -1,13 +1,17 @@
 min_all = int(input())
 
 # КОММЕНТАРИЙ: избыточные переменные
+
+# Убрал лишние "сущности" )) старый вариант закомментировал
+
 # деление без остатка
-hours = min_all // 60
+# hours = min_all // 60
 # остаток от деления на 60
-minutes = min_all % 60
+# minutes = min_all % 60
 
-print(f'{min_all} мин - это {hours} час {minutes} мин')
+# print(f'{min_all} мин - это {hours} час {minutes} мин')
 
+print(f'{min_all} мин - это {min_all // 60} час {min_all % 60} мин')
 
 # 148 мин - это 2 час 28 мин
 
