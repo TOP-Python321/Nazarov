@@ -6,7 +6,8 @@ if -1 <= ord(first_position[0]) - ord(second_position[0]) <= 1 and -1 <= int(fir
     print('да')
 else:
     print('нет')
-    
+
+
 # f4
 # f5
 # да
@@ -15,3 +16,5 @@ else:
 # a7
 # нет
 
+
+# ИТОГ: отлично — 4/4

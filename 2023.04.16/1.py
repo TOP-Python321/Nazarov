@@ -13,6 +13,10 @@ if second_num > 0:
 if third_num > 0:
     summa += third_num
     
-print (summa)
+print(summa)
+
 
 # 11.7
+
+
+# ИТОГ: отлично — 3/3
