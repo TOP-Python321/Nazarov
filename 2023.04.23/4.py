@@ -1,17 +1,21 @@
 import time
-start_time = time.time()
+# start_time = time.time()
 
 n = int(input())
  
 last_value = int('9'*n)
 first_value = (last_value + 1)//10
 
+start_time = time.time()
+
 print(f'Количество простых чисел {n}-й разрядности:')
 counter = 0
 for number in range(first_value, last_value + 1): 
     if number > 1:
         # ИСПРАВИТЬ: вот здесь нужно было использовать алгоритм нахождения делителей из прошлой задачи: такой производительности как в решете Эратосфена или Аткина не получили бы, но в 4–5 раз тоже неплохо, 6 разрядов за 10–15 с обсчитывает — а здесь у вас куча итераций лишних с проверками на каждой: ясно дело, будет тормозить
-        for div in range(2, number):
+        # for div in range(2, number):
+        # Да уж! действительно намного быстрее и без сложных математических формул.
+        for div in range(2, int(number**0.5) + 1):
             # ИСПОЛЬЗОВАТЬ: круглые скобки не нужны
             if number % div == 0:
                 break 
@@ -20,7 +24,9 @@ for number in range(first_value, last_value + 1):
 
 print(counter)
 # ИСПРАВИТЬ: ох и древность вы откопали... я зачем вам f-строки показывал? закопайте %s-тюардессу обратно и больше не доставайте
-print("--- %s seconds ---" % (time.time() - start_time))
+# print("--- %s seconds ---" % (time.time() - start_time))
+# Да, недочёт исправил. Импорт этой библиотеки и таймер я нагуглил, с ним с стюардесса залетела )) Но теперь зато знаю заветы старины ))
+print(f'--- {time.time() - start_time} seconds ---')
 
 # 3
 # Количество простых чисел 3-й разрядности:
