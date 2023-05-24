@@ -4,9 +4,13 @@ if sum(int(digit) for digit in (number_of_ticket[:3])) == sum(int(digit) for dig
     print('Да')
 else:
     print('Нет')
-    
+
+
 # Введите номер билета: 123321
 # Да
 
 # Введите номер билета: 555777
 # Нет
+
+
+# ИТОГ: отлично — 3/3
