@@ -4,12 +4,16 @@ general_dictionary = {}
 
 for dict in ref_7.list_of_dicts:
     for key, value in dict.items():
+        # ИСПРАВИТЬ: используйте словарные методы вместо явной проверки наличия ключа в словаре
         if key not in general_dictionary:
             general_dictionary[key] = {value}
         else:
             general_dictionary[key] = general_dictionary[key] | {value}
 
-print(*{f'{key!r}: {value}' for key, value in general_dictionary.items()}, sep=',\n')
+# КОММЕНТАРИЙ: вот это прям хороший пример использования print()
+# ИСПОЛЬЗОВАТЬ: создание множества избыточно — дублей не будет, потому что на каждый уникальный ключ создаётся одна строка — а значит можно распаковать сразу генераторное выражение, взятое в круглые скобки
+print(*(f'{key!r}: {value}' for key, value in general_dictionary.items()), sep=',\n')
+
 
 # 'Тула': {2, 3},
 # 'Пермь': {9, 3},
@@ -28,3 +32,6 @@ print(*{f'{key!r}: {value}' for key, value in general_dictionary.items()}, sep='
 # 'Красноярск': {9, 1},
 # 'Тюмень': {5},
 # 'Москва': {1}
+
+
+# ИТОГ: хорошо, но можно лучше — 3/4

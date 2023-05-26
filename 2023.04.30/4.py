@@ -2,19 +2,23 @@ dictionary_new = {}
 
 while True:
     dict_user = input('Введите ключ и значение через пробел: ').split()
-    
     if not dict_user:
         break
-        
     dictionary_new[dict_user[0]] = dict_user[1]
 
 inp_value = input('Введите значение из словаря: ')
 
-if key := {k for k in dictionary_new  if dictionary_new[k] == inp_value}:
+# КОММЕНТАРИЙ: да, ключей, сопоставленных одному значению, может быть и несколько, всё верно
+if key := {k for k in dictionary_new if dictionary_new[k] == inp_value}:
     print(*key)
 else:
     print('! value error !')
-    
+
+# ИСПОЛЬЗОВАТЬ: а можно без :=, но с тернарным оператором:
+keys = {k for k in dictionary_new if dictionary_new[k] == inp_value}
+print(*keys if keys else '! value error !')
+
+
 # Введите ключ и значение через пробел: 77 Москва
 # Введите ключ и значение через пробел: 78 Санкт-Петербург
 # Введите ключ и значение через пробел: 66 Екатеринбург
@@ -38,3 +42,6 @@ else:
 # Введите ключ и значение через пробел:
 # Введите значение из словаря: Херсон
 # ! value error !
+
+
+# ИТОГ: отлично — 3/3
